@@ -19,6 +19,128 @@ And only on the heap you can ask for more memory and give it back
 - * to go to an address in memory pointed to by a pointer
 - -> to access fields in a structure pointed to by a pointer
 
+
+
+## Growing arrays
+```
+1 // Implements a list of numbers with an array of fixed size
+2
+3 #include <stdio.h>
+4
+5 int main(void)
+6 {
+7   // List of size 3
+8   int list[3];
+9
+10   // Initialize list with numbers
+11  list[0] = 1;
+12  list[1] = 2;
+13  list[2] = 3;
+14
+15  // Print list
+16  for (int i = 0; i < 3; i++)
+17  {
+18      printf("%i\n", list[i]);
+19  }
+20 }
+
+--------------------------------------------------
+
+// Implements a list of numbers with an array of dynamic size
+#include <stdio.h>
+#include <stdlib.h>
+  
+int main(void)
+{
+    int *list = malloc(3 * sizeof(int));
+    if (list == NULL)
+    {
+        return 1;
+    }
+  
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+// List of size 4
+int *tmp = malloc(4 * sizeof(int));
+if (tmp == NULL)
+{
+    free(list);
+    return 1;
+}
+// Copy list of size 3 into list of size 4
+for (int i = 0; i < 3; i++)
+{
+    tmp[i] = list[i];
+}
+// Add number to list of size 4
+tmp[3] = 4;
+
+// Free list of size 3
+free(list);
+
+// Remember list of size 4
+list = tmp;
+// Print list
+for (int i = 0; i < 4; i++)
+{
+    printf("%i\n", list[i]);
+}
+// Free list
+free(list);
+return 0;
+
+
+
+```
+realock
+```
+#include <stdio.h>
+#include <stdlib.h>
+  
+int main(void)
+{ 
+    // Dynamically allocate an array of size 3
+    int *list = malloc(3 * sizeof(int));
+    if (list == NULL)
+    {
+        return 1;
+    }
+  
+    // Assign three numbers to that array
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    // Time passes
+
+    // Resize old array to be of size 4
+    int *tmp = realloc(list, 4 * sizeof(int));
+    if (tmp == NULL)
+    {
+        free(list);
+        return 1;
+    }
+
+    // Add fourth number to new array
+    tmp[3] = 4;
+
+    // Remember new array
+    list = tmp;
+
+    // Print new array
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%i\n", list[i]);
+    }
+
+    // Free new array
+    free(list);
+    return 0;
+}
+```
+
+
 Linked lists
 
 ![image](https://user-images.githubusercontent.com/31789624/199869997-abd5aec2-6c0b-40c9-9598-b6c6358b1ece.png)
@@ -89,3 +211,4 @@ malloc uses space from the heap, which was drawn at the top of the picture, poin
 There's also stack memory, which is where all of your local variables go. And where all of the memory used by individual functions go. And that was drawn in the picture is working its way up. That's just an artist's rendition of direction. 
 
 The compiler, essentially, will also help keep track of which values are valid or not inside of the stack. Or really the underlying code that you've written will keep track of that for you. So it's managed for you at that point. 
+
