@@ -53,6 +53,24 @@ node * list = NULL; Do THIS instead
 
 malloc does not initialize memory . There is another function for that.  malloc only  says, "use this chunk of memory. Deal with whatever is there". 
 
+Going inside the data of pointer
+```
+if (n != NULL)
+{
+    (*n).number = 1;
+}
+
+//or with sintax sugar
+
+if (n != NULL)
+{
+    n->number = 1;
+}
+
+
+
+
+
 other 
 
 malloc uses space from the heap, which was drawn at the top of the picture, pointing down. 
