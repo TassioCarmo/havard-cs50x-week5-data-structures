@@ -32,6 +32,22 @@ it stores the data and an pointer
 
 Using more space save time and consarve space loses times , that is the trade off
 
+We’ll call the group of boxes with a value and pointer a node, a component of a data structure encapsulates some information. We can implement a node with a struct:
+```
+typedef struct node
+{
+    int number;
+    struct node *next;
+}
+node;
+```
+ - We start this struct with typedef struct node so that we can refer to a struct node inside our struct.
+ - Then, we’ll have an int called number, for the value we want to store, and then a pointer to the next node with struct node. (We haven’t fully defined node yet, so the compiler needs to know it’s a custom struct still.)
+ - Finally, node at the end lets us use just node in the rest of our program.
+
+<code>node *n = malloc(sizeof(node));</code>
+
+
 
 
 other 
