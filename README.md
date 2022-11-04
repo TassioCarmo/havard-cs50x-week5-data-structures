@@ -69,7 +69,17 @@ if (n != NULL)
     n->number = 1;
 }
 
-```
+if (n != NULL)
+{
+    n->number = 1;
+    n->next = NULL;
+}
+````
+Finally, our list needs to point to the node: list = n;
+
+![image](https://user-images.githubusercontent.com/31789624/199880532-5a8ab279-b69e-47d2-ae8d-2521f7d590b6.png)
+
+recap it's  malloc to give yourself a node, initialize the 2 fields inside of it, update the linked list
 
 
 other 
