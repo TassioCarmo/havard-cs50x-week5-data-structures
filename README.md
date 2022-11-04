@@ -55,6 +55,8 @@ malloc does not initialize memory . There is another function for that.  malloc 
 
 Initializing to known values
 
+which reads the place n is pointing to set it to 1 or GO TO THE ADDRESS IN N and set its value to one
+
 ```
 if (n != NULL)
 {
