@@ -51,7 +51,7 @@ node *list; DO NOT DO THIS god knows what garbage value will be inside
 node * list = NULL; Do THIS instead
 ```
 
-
+malloc does not initialize memory . There is another function for that.  malloc only  says, "use this chunk of memory. Deal with whatever is there". 
 
 other 
 
