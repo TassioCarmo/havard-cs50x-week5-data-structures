@@ -1,3 +1,29 @@
 # Introduction to data structures
 
 ## What did i learn
+
+if you have an array a specific size and wants to add more data, it becomes problematic because the computer might have already puts some garbage data next to it
+
+<img src = "https://user-images.githubusercontent.com/31789624/199865763-74afb38f-da44-4661-b174-a73cf11f60fd.png">
+
+and inserting takes O(n) because you have to copy over all the existing data into the new array into a new array
+
+<code>int list[3];  // puts on the memory on the stack automatically</code>  
+<code>int *list = malloc(sizeof(int);  // puts on heap</code>  
+
+And only on the heap you can ask for more memory and give it back
+
+
+- struct to create custom data types
+- . to access fields, or values, in a structure
+- * to go to an address in memory pointed to by a pointer
+- -> to access fields in a structure pointed to by a pointer
+
+Linked lists
+
+![image](https://user-images.githubusercontent.com/31789624/199869997-abd5aec2-6c0b-40c9-9598-b6c6358b1ece.png)
+
+
+![image](https://user-images.githubusercontent.com/31789624/199870012-0c20739a-d055-43aa-ad99-9963a642eb38.png)
+
+An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
