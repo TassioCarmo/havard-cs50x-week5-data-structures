@@ -30,4 +30,4 @@ An array has a very specific meaning. It's memory that's contiguous, back, to ba
 
 it stores the data and an pointer
 
-Using more space save time and less space loses times , that is the trade off
+Using more space save time and consarve space loses times , that is the trade off
