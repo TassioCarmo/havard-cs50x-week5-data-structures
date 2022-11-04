@@ -31,3 +31,13 @@ An array has a very specific meaning. It's memory that's contiguous, back, to ba
 it stores the data and an pointer
 
 Using more space save time and consarve space loses times , that is the trade off
+
+
+
+other 
+
+malloc uses space from the heap, which was drawn at the top of the picture, pointing down. 
+
+There's also stack memory, which is where all of your local variables go. And where all of the memory used by individual functions go. And that was drawn in the picture is working its way up. That's just an artist's rendition of direction. 
+
+The compiler, essentially, will also help keep track of which values are valid or not inside of the stack. Or really the underlying code that you've written will keep track of that for you. So it's managed for you at that point. 
