@@ -47,6 +47,9 @@ node;
 
 <code>node *n = malloc(sizeof(node));</code>
 
+node *list; DO NOT DO THIS god knows what garbage value will be inside
+node * list = NULL; Do THIS instead
+
 
 
 
