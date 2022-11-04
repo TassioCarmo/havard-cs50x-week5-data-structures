@@ -27,3 +27,7 @@ Linked lists
 ![image](https://user-images.githubusercontent.com/31789624/199870012-0c20739a-d055-43aa-ad99-9963a642eb38.png)
 
 An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
+
+it stores the data and an pointer
+
+Using more space save time and less space loses times , that is the trade off
