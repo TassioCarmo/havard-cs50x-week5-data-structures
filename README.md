@@ -399,6 +399,39 @@ node;
 - And even if our data structure has lots of words, the maximum lookup time will be just the length of the word we’re looking for. This might be a fixed maximum, so we have a constant time O(1),, for searching and insertion.
 - The cost for this, though, is that we need lots of memory to store mostly null pointers.
 
+
+## Pros and cons Data structures
+
+### Array
+- Insertion is bad –lots of shifting to fit an element in the middle
+- Deletion is bad –lots of shifting after removing an element
+- Lookup is great –random access, constant time
+- Relatively easy to sort
+- Relatively small size-wise
+- Stuck with a fixed size, no flexibility
+
+### Linked lists
+- Insertion is easy –just tack onto the front
+- Deletion is easy –once you find the element
+- Lookup is bad –have to rely on linear search
+- Relatively difficult to sort –unless you’re willing to compromise on super-fast insertion and instead sort as you construct
+- Relatively small size-wise (not as small as arrays)
+
+### Hash tables
+- Insertion is a two-step process –hash, then add
+- Deletion is easy –once you find the element
+- Lookup is on average better than with linked lists because you have the benefit of a real-world constant factor
+- Not an ideal data structure if sorting is the goal –just use an array
+- Can run the gamut of size
+
+### Tries
+- Insertion is complex –a lot of dynamic memory allocation, but gets easier as you go
+- Deletion is easy –just free a node
+- Lookup is fast –not quite as fast as an array, but almost
+- Already sorted –sorts as you build in almost all situations
+- Rapidly becomes huge, even with very little data present, not great if space is at a premium
+
+
 ## other 
 
 Time complexity of searching in linked list O(n)
