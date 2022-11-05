@@ -335,7 +335,11 @@ bool search(node *tree, int number)
 }
 
 ```
-other 
+time complexity
+
+O(log n) if you  maintain the balance of the tree. otherwise Both, in certain search, could actually devolve into , big O of n. 
+
+## other 
 
 Time complexity of searching in linked list O(n)
 
