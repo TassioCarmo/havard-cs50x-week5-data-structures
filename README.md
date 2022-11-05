@@ -371,7 +371,7 @@ node *hash_table[NUMBER_OF_BUCKETS];
  
 
 
-
+An array whose elements are linked lists
 
 
 ## other 
