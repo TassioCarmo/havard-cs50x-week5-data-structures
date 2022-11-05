@@ -148,6 +148,10 @@ int main(void)
 
 ![image](https://user-images.githubusercontent.com/31789624/199870012-0c20739a-d055-43aa-ad99-9963a642eb38.png)
 
+Growing linked lists
+
+ 
+
 An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
 
 it stores the data and an pointer
@@ -201,10 +205,11 @@ Finally, our list needs to point to the node: list = n;
 
 ![image](https://user-images.githubusercontent.com/31789624/199880532-5a8ab279-b69e-47d2-ae8d-2521f7d590b6.png)
 
-recap it's  malloc to give yourself a node, initialize the 2 fields inside of it, update the linked list
 
 
 other 
+
+An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
 
 malloc uses space from the heap, which was drawn at the top of the picture, pointing down. 
 
