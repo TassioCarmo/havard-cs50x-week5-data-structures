@@ -141,7 +141,7 @@ int main(void)
 ```
 
 
-Linked lists
+## Linked lists
 
 ![image](https://user-images.githubusercontent.com/31789624/199869997-abd5aec2-6c0b-40c9-9598-b6c6358b1ece.png)
 
