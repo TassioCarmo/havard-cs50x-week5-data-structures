@@ -370,9 +370,34 @@ node *hash_table[NUMBER_OF_BUCKETS];
  The hash table will be an array of pointers to nodes, with NUMBER_OF_BUCKETS as its size.
  
 
+Hash table could be thought An array whose elements are linked lists
 
-An array whose elements are linked lists
+A hash function is generally something that takes as input, a string, a number, whatever, and produces as output a location in our context. Like a number 0 through 25. Or 0 through 16,000. Or whatever the number of buckets you want is, it's going to just tell you where to put that input at a specific location. 
 
+Theoretically it's O(O) but in practice is much more faster than an linked list
+
+### Trie  short for “retrieval”
+
+ is a tree with arrays as nodes
+
+![image](https://user-images.githubusercontent.com/31789624/200139461-81667c56-8280-4572-a1fc-57bb1e11e8ec.png)
+
+```
+typedef struct node
+{
+    bool is_word;
+    struct node *children[SIZE_OF_ALPHABET];
+}
+node;
+
+```
+
+
+- At each node, or array, we’ll have a boolean value that indicates if it’s a valid word (whether or not it should be green). Then, we’ll have an array of SIZE_OF_ALPHABET pointers to other nodes, called children.
+
+- the height of our tree is the length of the longest word we want to store.
+- And even if our data structure has lots of words, the maximum lookup time will be just the length of the word we’re looking for. This might be a fixed maximum, so we have a constant time O(1),, for searching and insertion.
+- The cost for this, though, is that we need lots of memory to store mostly null pointers.
 
 ## other 
 
@@ -395,3 +420,8 @@ The compiler, essentially, will also help keep track of which values are valid o
 You never have to free pointers, per se. You should only free addresses that were returned to you by malloc.
 
 Return means quit
+
+
+Either you're going to minimize space or you're going to minimize time. 
+
+It's not really possible to get truly the best of both worlds. You have to decide where the inflection point is for the device you're writing software for, how much memory it has, how expensive it is. And again, taking all of these things into account. 
