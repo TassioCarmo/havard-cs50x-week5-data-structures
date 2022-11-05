@@ -309,6 +309,8 @@ void print_tree(node *root)
 
 ### Binary search if tree
 
+binary search tree is a tree where the root is greater than its left child and smaller than its right child
+
 ```
 binary search:
 
