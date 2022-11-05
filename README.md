@@ -339,6 +339,7 @@ Time complexity of searching in linked list O(n)
 
 Time complexity of inserting data in linked list O(n) if sorting and o(1) if not
 
+recursion tends to work in lockstep with t these kinds of data structures(trees). 
 
 linked list can you remember only remember the next node in the list
 
