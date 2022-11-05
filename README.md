@@ -231,6 +231,11 @@ list = n;
 
 ### binary search tree
 
+Every node needs not one number, but 2, 3 pieces of data. A number and now 2 pointers. 
+
+there's that trade off . Where, if you want to save time, you've got to give something if you start giving space. And you start using more space, you can speed up time. 
+
+
 preserved the upsides of dynamic memory allocation, giving the ability to just add another element, add another element, add another element. But retain the power of binary search
 
 You can retain and remember this entire tree just by pointing at the root node. One variable can hang on to the whole tree. 
