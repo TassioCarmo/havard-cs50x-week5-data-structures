@@ -233,6 +233,8 @@ list = n;
 
 preserved the upsides of dynamic memory allocation, giving the ability to just add another element, add another element, add another element. But retain the power of binary search
 
+You can retain and remember this entire tree just by pointing at the root node. One variable can hang on to the whole tree. 
+
  
 ![image](https://user-images.githubusercontent.com/31789624/200136810-e709cc28-9070-44fc-ae2f-a20fd132d6b3.png)
 
