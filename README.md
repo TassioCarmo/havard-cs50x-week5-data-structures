@@ -212,3 +212,4 @@ There's also stack memory, which is where all of your local variables go. And wh
 
 The compiler, essentially, will also help keep track of which values are valid or not inside of the stack. Or really the underlying code that you've written will keep track of that for you. So it's managed for you at that point. 
 
+You never have to free pointers, per se. You should only free addresses that were returned to you by malloc.
