@@ -143,67 +143,86 @@ int main(void)
 
 ## Linked lists
 
+With a linked list, we have the tradeoff of needing to allocate more memory for each value and pointer, in order to spend less time adding values. (When we copy an array, we do need to allocate more memory, but we free the old array once we finish copying it.)
+
 ![image](https://user-images.githubusercontent.com/31789624/199869997-abd5aec2-6c0b-40c9-9598-b6c6358b1ece.png)
 
 
 ![image](https://user-images.githubusercontent.com/31789624/199870012-0c20739a-d055-43aa-ad99-9963a642eb38.png)
 
-Growing linked lists
-
- 
-
-An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
-
-it stores the data and an pointer
-
-Using more space save time and consarve space loses times , that is the trade off
-
-We’ll call the group of boxes with a value and pointer a node, a component of a data structure encapsulates some information. We can implement a node with a struct:
+We use nodes, which is a component of a data structure encapsulates some information. We can implement a node with a struct:
 ```
 typedef struct node
 {
     int number;
     struct node *next;
 }
+
 node;
 ```
- - We start this struct with typedef struct node so that we can refer to a struct node inside our struct.
- - Then, we’ll have an int called number, for the value we want to store, and then a pointer to the next node with struct node. (We haven’t fully defined node yet, so the compiler needs to know it’s a custom struct still.)
- - Finally, node at the end lets us use just node in the rest of our program.
+We can build a linked list in code starting with our struct. First, we’ll want to remember an empty list, so we can use the null pointer: <code>node *list = NULL;</code>. To add a node, we’ll first need to allocate some memory:
+
 
 <code>node *n = malloc(sizeof(node));</code>
-```
-node *list; DO NOT DO THIS god knows what garbage value will be inside
-node * list = NULL; Do THIS instead
-```
-
-malloc does not initialize memory . There is another function for that.  malloc only  says, "use this chunk of memory. Deal with whatever is there". 
-
-Initializing to known values
-
-which reads the place n is pointing to set it to 1 or GO TO THE ADDRESS IN N and set the number field to one
-```
-if (n != NULL)
-{
-    (*n).number = 1;
-}
-
-//or with sintax sugar
-
-if (n != NULL)
-{
-    n->number = 1;
-}
-
 if (n != NULL)
 {
     n->number = 1;
     n->next = NULL;
 }
-````
-Finally, our list needs to point to the node: list = n;
 
-![image](https://user-images.githubusercontent.com/31789624/199880532-5a8ab279-b69e-47d2-ae8d-2521f7d590b6.png)
+Finally, our list needs to point to the node: list = n;:
+
+![image](https://user-images.githubusercontent.com/31789624/200134359-6c7fda3e-0da1-4009-9e91-90f595c9316d.png)
+
+
+
+## Growing linked lists
+
+To add to the list, we’ll create a new node the same way by allocating more memory:
+```
+n = malloc(sizeof(node));
+if (n != NULL)
+{
+    n->number = 2;
+    n->next = NULL;
+}
+```
+
+n is a temporary variable we use to point to this new node:
+
+![image](https://user-images.githubusercontent.com/31789624/200134384-c9700bbe-c004-4ea0-8f36-55bf4c54e43f.png)
+
+And now we need to update the pointer in our first node to point to our new n, since we want to maintain a sorted list:
+
+list->next = n;
+
+![image](https://user-images.githubusercontent.com/31789624/200134401-72b7f558-b076-4eae-a10c-e527628b8e3c.png)
+
+To add a third node, we’ll allocate more memory again:
+```
+node *n = malloc(sizeof(node));
+if (n != NULL)
+{
+    n->number = 3;
+    n->next = NULL;
+}
+```
+
+![image](https://user-images.githubusercontent.com/31789624/200134422-18390149-2b39-4620-a169-4e1e675f32ba.png)
+
+To insert this node in our list, we’ll want to follow the next pointer in the first node that list points to (the node with value 1), then setting the next pointer in that node (with value 2) to point to the new node:
+
+<code>list->next->next = n;</code>
+
+
+
+
+
+
+
+
+ 
+
 
 
 
