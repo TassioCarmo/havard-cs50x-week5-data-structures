@@ -227,14 +227,80 @@ n->next = list;
 list = n;
 ```
 
+## Trees
 
+### binary search tree
 
+preserved the upsides of dynamic memory allocation, giving the ability to just add another element, add another element, add another element. But retain the power of binary search
 
  
+![image](https://user-images.githubusercontent.com/31789624/200136810-e709cc28-9070-44fc-ae2f-a20fd132d6b3.png)
+
+- Each node has not one but two pointers to other nodes. All the values to the left of a node are smaller, and all the values of nodes to the right are greater, which allows this to be used as a binary search tree.
+- Each node has at most two children, or nodes it is pointing to.
+- And like a linked list, we’ll want to keep a pointer to just the beginning of the list, but in this case we want to point to the root, or topmost node of the tree (the 4).
+- To search for a number, we’ll start at the root node, and be able to recursively search the left or right subtree.
+- The height of this tree is 3, or, since each parent node has up to two children.
+
+```
+typedef struct node
+{
+    int number;
+    struct node *left;
+    struct node *right;
+}
+node;
+
+int main(void)
+{
+    // Tree of size 0
+    node *tree = NULL;
+  
+    // Add number to list
+    node *n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        return 1;
+    }
+    n->number = 2;
+    n->left = NULL;
+    n->right = NULL;
+    tree = n;
+
+// Add number to list
+n = malloc(sizeof(node));
+if (n == NULL)
+{
+    free_tree(tree);
+    return 1;
+}
+n->number = 3;
+n->left = NULL;
+n->right = NULL;
+tree->right = n;
+
+// Print tree
+print_tree(tree);
+
+// Free tree
+free_tree(tree);
+return 0;
+}
+void print_tree(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    print_tree(root->left);
+    printf("%i\n", root->number);
+    print_tree(root->right);
+}
 
 
 
 
+```
 other 
 
 Time complexity of searching in linked list O(n)
