@@ -216,7 +216,16 @@ To insert this node in our list, we’ll want to follow the next pointer in the 
 
 
 
+This is bad , because you will orphan the rest of the list
 
+<code>list = n;</code>
+
+
+do this
+```
+n->next = list;
+list = n;
+```
 
 
 
@@ -227,6 +236,10 @@ To insert this node in our list, we’ll want to follow the next pointer in the 
 
 
 other 
+
+Time complexity of searching in linked list O(n)
+
+linked list can you remember only remember the next node in the list
 
 An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
 
