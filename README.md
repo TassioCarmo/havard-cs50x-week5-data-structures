@@ -339,6 +339,41 @@ time complexity
 
 O(log n) if you  maintain the balance of the tree. otherwise Both, in certain search, could actually devolve into , big O of n. 
 
+
+## Hash table
+
+is a data structure that allows us to associate keys with values. It looks like an array, where we can jump to each location by its index:
+
+![image](https://user-images.githubusercontent.com/31789624/200137768-c2e02785-1135-4d00-bc57-aa7c5f429f0a.png)
+
+
+![image](https://user-images.githubusercontent.com/31789624/200137775-17477467-2807-41e0-ae64-26bd6df0dd12.png)
+
+think of these 26 locations, now in the context of a hash table, is what we'll call them buckets. So buckets into which you can put values. 
+
+```
+
+typedef struct node
+{
+    char word[LONGEST_WORD + 1];
+    struct node *next;
+}
+node;
+
+```
+Each node will have an array of characters already allocated, of maximum size LONGEST_WORD + 1, called word, that it’s storing. Then, a next pointer will point to another node, if there is one.
+
+```
+node *hash_table[NUMBER_OF_BUCKETS];
+```
+
+ The hash table will be an array of pointers to nodes, with NUMBER_OF_BUCKETS as its size.
+ 
+
+
+
+
+
 ## other 
 
 Time complexity of searching in linked list O(n)
