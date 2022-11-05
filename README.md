@@ -454,6 +454,11 @@ You never have to free pointers, per se. You should only free addresses that wer
 
 Return means quit
 
+The arrow operator ( (-->>) makes this process easier. It’s an
+operator that does two things back to back:
+- First, it dereferences the pointer on the left side of the operator.
+- Second, it accesses the field on the right side of the operator.
+
 
 Either you're going to minimize space or you're going to minimize time. 
 
