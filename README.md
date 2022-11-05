@@ -227,9 +227,7 @@ n->next = list;
 list = n;
 ```
 
-## Trees
-
-### binary search tree
+## Tree
 
 Every node needs not one number, but 2, 3 pieces of data. A number and now 2 pointers. 
 
@@ -307,7 +305,32 @@ void print_tree(node *root)
 }
 
 
+```
 
+### Binary search if tree
+
+```
+binary search:
+
+bool search(node *tree, int number)
+{
+    if (tree == NULL)
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+    else if (number == tree->number)
+    {
+        return true;
+    }
+}
 
 ```
 other 
