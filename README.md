@@ -239,6 +239,9 @@ other
 
 Time complexity of searching in linked list O(n)
 
+Time complexity of inserting data in linked list O(n) if sorting and o(1) if not
+
+
 linked list can you remember only remember the next node in the list
 
 An array has a very specific meaning. It's memory that's contiguous, back, to back, to back.
