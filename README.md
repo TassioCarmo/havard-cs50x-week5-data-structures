@@ -213,7 +213,7 @@ n is a temporary variable we use to point to this new node:
 
 And now we need to update the pointer in our first node to point to our new n, since we want to maintain a sorted list:
 
-list->next = n;
+<code>list->next = n;</code>
 
 ![image](https://user-images.githubusercontent.com/31789624/200134401-72b7f558-b076-4eae-a10c-e527628b8e3c.png)
 
