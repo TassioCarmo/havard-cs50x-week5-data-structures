@@ -233,7 +233,7 @@ To insert this node in our list, we’ll want to follow the next pointer in the 
 
 <code>list->next->next = n;</code>
 
-
+-------------------------------------------------
 
 This is bad , because you will orphan the rest of the list
 
