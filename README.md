@@ -155,14 +155,16 @@ int main(void)
 
 ## Linked lists
 
-With a linked list, we have the tradeoff of needing to allocate more memory for each value and pointer, in order to spend less time adding values. (When we copy an array, we do need to allocate more memory, but we free the old array once we finish copying it.)
+linked list, we can store a list of values in different parts of memory:
+
+with that we have a tradeoff of needing to allocate more memory for each value and pointer, in order to spend less time adding values. (When we copy an array, we do need to allocate more memory, but we free the old array once we finish copying it.)
 
 ![image](https://user-images.githubusercontent.com/31789624/199869997-abd5aec2-6c0b-40c9-9598-b6c6358b1ece.png)
 
 
 ![image](https://user-images.githubusercontent.com/31789624/199870012-0c20739a-d055-43aa-ad99-9963a642eb38.png)
 
-We use nodes, which is a component of a data structure encapsulates some information. We can implement a node with a struct:
+**Nodes** , which is a component of a data structure encapsulates some information. We can implement a node with a struct:
 ```
 typedef struct node
 {
@@ -176,11 +178,16 @@ We can build a linked list in code starting with our struct. First, we’ll want
 
 
 <code>node *n = malloc(sizeof(node));</code>
+
+```
 if (n != NULL)
 {
     n->number = 1;
     n->next = NULL;
 }
+```
+- Since n is a pointer, we need to go to the node there first, and then use the . operator to set a value, so instead of (*n).number, we can write <code>n->number</code>, which has the same effect.
+
 
 Finally, our list needs to point to the node: list = n;:
 
