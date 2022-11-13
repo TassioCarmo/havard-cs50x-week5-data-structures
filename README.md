@@ -90,9 +90,11 @@ for (int i = 0; i < 4; i++)
 free(list);
 return 0;
 
-/* First, we’ll allocate enough memory for three integers and point to the first one with int *list. (If malloc fails, our pointer will be null, and we’ll exit our *  program with return 1.)
+/* First, we’ll allocate enough memory for three integers and point to the first one with int *list. 
+*  (If malloc fails, our pointer will be null, and we’ll exit our  program with return 1.)
 *
-* Since arrays in C are equivalent to pointers, we can use the same notation to set the values in our list with list[0], list[1], and list[2]. The compiler will *perform the correct pointer arithmetic to set values at the right addresses.
+* Since arrays in C are equivalent to pointers, we can use the same notation to set the values in our list with list[0], list[1],
+* and list[2]. The compiler will perform the correct pointer arithmetic to set values at the right addresses.
 */
 ```
 realock
@@ -141,7 +143,9 @@ int main(void)
     return 0;
     
     
- /* After we allocate enough memory for four integers, we need a temporary pointer, tmp, since we need to copy values from our original list into the new chunk of     * memory. (If malloc fails, we’ll free the original memory and exit our program with return 1.)
+ /* After we allocate enough memory for four integers, we need a temporary pointer, tmp,
+ * since we need to copy values from our original list into the new chunk of  memory.
+ * (If malloc fails, we’ll free the original memory and exit our program with return 1.)
  */
 // We’ll use a for loop to copy the values from list, and set the final value in tmp.
 
