@@ -23,26 +23,25 @@ And only on the heap you can ask for more memory and give it back
 
 ## Growing arrays
 ```
-1 // Implements a list of numbers with an array of fixed size
-2
-3 #include <stdio.h>
-4
-5 int main(void)
-6 {
-7   // List of size 3
-8   int list[3];
-9
-10   // Initialize list with numbers
-11  list[0] = 1;
-12  list[1] = 2;
-13  list[2] = 3;
-14
-15  // Print list
-16  for (int i = 0; i < 3; i++)
-17  {
-18      printf("%i\n", list[i]);
-19  }
-20 }
+// Implements a list of numbers with an array of fixed size
+
+ #include <stdio.h>
+int main(void)
+ {
+  // List of size 3
+   int list[3];
+
+   // Initialize list with numbers
+  list[0] = 1;
+  list[1] = 2;
+  list[2] = 3;
+
+  // Print list
+  for (int i = 0; i < 3; i++)
+  {
+   printf("%i\n", list[i]);
+  }
+ }
 
 --------------------------------------------------
 
